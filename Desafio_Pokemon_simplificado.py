@@ -1,7 +1,7 @@
 import random
 
 pokedex = []
-print(f"\nOlá, eu sou o professor Carvalho, um pesquisador Pokémon.\nAnters de começarmos nossa jornada, qual é o seu nome?")
+print(f"\nOlá, eu sou o professor Carvalho, um pesquisador Pokémon.\nAntes de começarmos nossa jornada, qual é o seu nome?")
 nome = str(input("\n-> "))
 print(f"\nÓtimo, então você é o {nome}! Prepare-se para embarcar em uma aventura emocionante no mundo dos Pokémons!")
 tentativa_captura = 3
@@ -10,7 +10,7 @@ captura = 0
 #Looping "o que deseja fazer?" e suas escolhas
 while True:
     if tentativa_captura == 0:
-        print("\nAcabaram as tentativas... Reinicie o jogo\n")
+        print(f"\nPókemons capturados: {pokedex}\n\nAcabaram as tentativas... Reinicie o jogo\n")
         break
     escolha = int(input(f"\nO que você deseja fazer?\n1. Entrar na caverna\n2. Entrar no mato\n3. Ver Pokédex\n4. Sair\n\n-> "))
 
@@ -30,13 +30,13 @@ while True:
             #Looping para decidir qual pokemon vai encontrar
             while True:
                 pokemon_caverna = random.randint(0,10)
-                if 0 <= pokemon_caverna <= 6: #60% de chance de capturar o Pikachu
+                if 0 <= pokemon_caverna <= 6: #60% de chance de encontrar o Pikachu
                         pokemon_encontrado = pokemons_caverna[0]
                         break
-                elif 7<=pokemon_caverna<=9: #30% de chance de capturar o Golem 
+                elif 7<=pokemon_caverna<=9: #30% de chance de encontrar o Golem 
                         pokemon_encontrado = pokemons_caverna[1]
                         break
-                elif pokemon_caverna == 10: #10% de chance de capturar o Blastoide
+                elif pokemon_caverna == 10: #10% de chance de encontrar o Blastoide
                         pokemon_encontrado = pokemons_caverna[2]
                         break
             print(f"\n-Você encontrou o {pokemon_encontrado}!-")
@@ -80,13 +80,13 @@ while True:
         #Looping para decidir qual pokemon vai encontrar
         while True:
             pokemon_mato = random.randint(0,10)
-            if 0 <= pokemon_mato <= 6: #60% de chance de capturar o Bulbasaur 
+            if 0 <= pokemon_mato <= 6: #60% de chance de encontrar o Bulbasaur 
                     pokemon_encontrado = lista_pokemons_mato[0]
                     break
-            elif 7<=pokemon_mato<=9: #30% de chance de capturar o Golduck 
+            elif 7<=pokemon_mato<=9: #30% de chance de encontrar o Golduck 
                     pokemon_encontrado = lista_pokemons_mato[1]
                     break
-            elif pokemon_mato == 10: #10% de chance de capturar o Charizard
+            elif pokemon_mato == 10: #10% de chance de encontrar o Charizard
                     pokemon_encontrado = lista_pokemons_mato[2]
                     break
         #Depois de definido qual pókemon o usuário encontrou, irá começar a captura
@@ -102,15 +102,15 @@ while True:
 
             if escolha_mato == 1: 
                 #50% de 10 para a chance de captura
-                chance_captura = random.randint(0,10)
+                chance_captura2 = random.randint(0,100)
                 #se variavel entre 0-5 (50% de 10) irá capturar
-                if 0<=chance_captura<= 5:
+                if 0<=chance_captura2<= 50:
                     print(f"\nPókemon {pokemon_encontrado} capturado com sucesso!\n")
                     pokedex.append(pokemon_encontrado)
                     captura += 1
                     break
                 #se variável entre 6-10 (outro 50% de 10) não irá capturar
-                elif 6<=chance_captura<=10:
+                elif 51<=chance_captura2<=100:
                     print(f"\nPókemon {pokemon_encontrado} não capturado, tente novamente!")
                     tentativa_captura -= 1
                     print(f"\nTentativas restantes: {tentativa_captura}")
