@@ -20,7 +20,7 @@ while True:
         continue
 
     #ENTRAR NA CAVERNA
-    if escolha == 1:
+    elif escolha == 1:
             ja_tem_este_pokemon = 0
             print("\n\nEscolheu entrar na caverna")
             #POKEMONS CAVERNA
@@ -72,7 +72,7 @@ while True:
     
 
     #ENTRA NA FLORESTA
-    if escolha == 2:
+    elif escolha == 2:
         print("\n\nEscolheu entrar na floresta")
         #POKEMONS MATO
         lista_pokemons_mato = ["Bulbasaur", "Golduck", "Charizard"]
@@ -129,12 +129,12 @@ while True:
                 continue
     
     #VER PÓKEDEX
-    if escolha == 3:
+    elif escolha == 3:
         print(f"\nPókemons capturados:")
         for i in range(0,len(pokedex)):
             print(f"- {pokedex[i]}")
 
     #SAIR DO JOGO
-    if escolha == 4:
+    elif escolha == 4:
         print("\nAté logo!\n")
         break
